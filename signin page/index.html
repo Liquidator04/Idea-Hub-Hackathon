@@ -18,7 +18,7 @@
     <div class="desktop-1">
       <div class="desktop-1-child"></div>
       <div class="dont-have-an">Don’t have an acc</div>
-      <input class="password" type="password" placeholder="Password" required />
+      <input class="password" type="password" placeholder="Password" id="password" required />
 
       <b class="unleash-your-ideas"
         >Unleash Your Ideas, Power Collaboration, Ignite Investment</b
@@ -32,7 +32,7 @@
 
       <img class="desktop-1-child1" alt="" src="./public/line-2.svg" />
 
-      <input class="user-name" type="text" placeholder="User name" required />
+      <input class="user-name" type="text" placeholder="User name" id="username" required />
 
       <button class="forgot-password">Forgot Password?</button>
       <a href="../SignUp/index.html"><button class="rectangle-button"></button></a>
@@ -43,8 +43,23 @@
         src="./public/b55d1c8cbc694bcf8d4df1b4bce97331-1@2x.png"
       />
 
-      <button class="desktop-1-child2"></button>
-      <button class="log-in1">Log in</button>
+      <button class="desktop-1-child2" onclick="UsernameAndPasswordCheck();"></button>
+      <button class="log-in1" onclick="UsernameAndPasswordCheck();">Log in</button>
     </div>
   </body>
+  <script>
+    let userNamesAndPasswords=[["Aritra Bag","Avc2Ua7e5&"],["Muhammad Owais","YourWishDa"],["Saketh","Shadow24"],["Sanjay","ShadowMid"],["Sai","LOL"]];
+    function UsernameAndPasswordCheck(){
+      let username=document.getElementById("username").value;
+      let pwd=document.getElementById("password").value;
+      for(var i=0;i<userNamesAndPasswords.length;i++){
+        if(username==userNamesAndPasswords[i][0] && pwd==userNamesAndPasswords[i][1]){
+          alert("Welcome Back To Idea Hub");
+          return true;
+        }
+      }
+      alert("Didn't find your account");
+      return false;
+    }
+  </script>
 </html>
