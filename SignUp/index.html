@@ -16,7 +16,11 @@
   </head>
   <body>
     <div class="desktop-1">
-      <textarea class="desktop-1-child" placeholder="Full Name"> </textarea>
+      <input
+        class="desktop-1-child"
+        placeholder="Full Name"
+        id="username"
+      />
       <input
         class="confirm-password"
         type="password"
@@ -25,9 +29,8 @@
         id="CPassword"
       />
 
-      <b class="unleash-your-ideas"
-        >Unleash Your Ideas, Power Collaboration, Ignite Investment</b
-      >
+      <b class="unleash-your-ideas">Unleash Your Ideas, Power Collaboration, Ignite Investment</b>
+
       <div class="englishuk">English(UK)</div>
       <img class="desktop-1-item" alt="" src="./public/polygon-1.svg" />
 
@@ -57,7 +60,12 @@
         id="password"
       />
 
-      <input class="full-name" type="text" placeholder="Full Name" required />
+      <input
+        class="full-name"
+        type="text"
+        placeholder="Full Name"
+        required
+      />
 
       <input
         class="email-id"
@@ -77,8 +85,36 @@
         src="./public/b55d1c8cbc694bcf8d4df1b4bce97331-1@2x.png"
       />
 
-      <button class="desktop-1-child4"></button>
-      <button class="log-in">Log in</button>
+      <button
+        class="desktop-1-child4"
+        onclick="UsernameAndPasswordCheck();"
+      ></button>
+      <button class="log-in" onclick="UsernameAndPasswordCheck();">
+        Log in
+      </button>
     </div>
+
+    <script>
+      let userNamesAndPasswords = [
+        ["Aritra Bag", "Avc2Ua7e5&"],
+        ["Muhammad Owais", "YourWishDa"],
+        ["Saketh", "Shadow24"],
+        ["Sanjay", "ShadowMid"],
+        ["Sai", "LOL"],
+      ];
+
+      function UsernameAndPasswordCheck() {
+        let username = document.getElementById("username").value;
+        console.log("Username: " + username);
+        for (var i = 0; i < userNamesAndPasswords.length; i++) {
+          if (username == userNamesAndPasswords[i][0]) {
+            alert("Username already in use. Please try another username.");
+            return false;
+          }
+        }
+        alert("Account successfully created.");
+        return true;
+      }
+    </script>
   </body>
 </html>
