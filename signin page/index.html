@@ -50,15 +50,16 @@
   <script>
     let userNamesAndPasswords=[["Aritra Bag","Avc2Ua7e5&"],["Muhammad Owais","YourWishDa"],["Saketh","Shadow24"],["Sanjay","ShadowMid"],["Sai","LOL"]];
     function UsernameAndPasswordCheck(){
+      console.log("Hello world");
       let username=document.getElementById("username").value;
       let pwd=document.getElementById("password").value;
       for(var i=0;i<userNamesAndPasswords.length;i++){
         if(username==userNamesAndPasswords[i][0] && pwd==userNamesAndPasswords[i][1]){
-          alert("Welcome Back To Idea Hub");
+          window.location.href = '../../../Idea Hub 2/index.html';
           return true;
         }
       }
-      alert("Didn't find your account");
+      alert("Invalid Username or Password");
       return false;
     }
   </script>
